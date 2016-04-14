@@ -1,12 +1,12 @@
 import cv2, os, numpy as np
 
-ResizedWidth = 60
-ResizedHeight = 60
+ResizedWidth = 65
+ResizedHeight = 65
 
 CascadePath = "haarcascade_frontalface_default.xml"
 faceCascade = cv2.CascadeClassifier(CascadePath)
 
-images = np.zeros((0,60 * 60))
+images = np.empty((0, ResizedWidth * ResizedHeight))
 labels = []
 for i in xrange(1, 41):
 	
@@ -15,7 +15,6 @@ for i in xrange(1, 41):
 		imagepath = './Dataset 1/s' + str(i) + '/' + str(j) + ".pgm"
 		img = cv2.imread(imagepath, 0)
 		faces = faceCascade.detectMultiScale(img)
-		print img.shape
 		
 		for (x, y, w, h) in faces:
 			face = img[y: y + h, x: x + w ]
@@ -27,7 +26,7 @@ for i in xrange(1, 41):
 			cv2.waitKey(50)
 
 # images = np.array(images)
-print images, labels
-print images.shape
+# print images, labels
+# print images.shape
 np.savetxt("FaceData.txt", images)
 np.savetxt("FaceClassifier.txt", labels,  fmt = '%s')
