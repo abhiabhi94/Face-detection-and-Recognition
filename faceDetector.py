@@ -2,7 +2,7 @@ import cv2, sys
 
 # Get user supplied values
 cascPath = "haarcascade_frontalface_default.xml"
-
+div = 600
 # Create the haar cascade
 faceCascade = cv2.CascadeClassifier(cascPath)
 recognizer = cv2.createLBPHFaceRecognizer()
@@ -11,7 +11,7 @@ class Face():
 
 	def preprocessing(self, img):
 
-		RP = img.shape[0] / 800 if img.shape[0] <= img.shape[1] else img.shape[1] / 800
+		RP = img.shape[0] / div if img.shape[0] <= img.shape[1] else img.shape[1] / div
 		imgResized = cv2.resize (img, (img.shape[1] / RP, img.shape[0] / RP))
 		gray = cv2.cvtColor(imgResized, cv2.COLOR_BGR2GRAY)
 		return gray, imgResized
