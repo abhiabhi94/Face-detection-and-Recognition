@@ -23,7 +23,7 @@ for i in xrange(1, 41):
 			# face = face.reshape((1, ResizedWidth * ResizedHeight))
 			# images = np.array(np.append(images, face, 0), np.float32)
 			images.append(face)
-			labels.append("s" + str(i))
+			labels.append(i)
 			cv2.waitKey(50)
 
 # images = np.array(images)

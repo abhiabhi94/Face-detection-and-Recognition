@@ -1,7 +1,6 @@
 import cv2, sys
 
 # Get user supplied values
-imgPath = "face2.JPG"
 cascPath = "haarcascade_frontalface_default.xml"
 
 # Create the haar cascade
@@ -37,11 +36,12 @@ class Face():
 	# Face Recognizer
 
 
-img = cv2.imread(imgPath)
-Faceobj = Face()
-imgPreProcessed, imgResized = Faceobj.preprocessing(img)
-faces = Faceobj.detectFace(imgPreProcessed)
-Faceobj.RectAroundFace(faces, imgResized)
-cv2.imshow("Faces found", imgResized)
-cv2.waitKey(0)
+### Use this part only when you want to run this module independently ###
+# img = cv2.imread(imgPath)
+# Faceobj = Face()
+# imgPreProcessed, imgResized = Faceobj.preprocessing(img)
+# faces = Faceobj.detectFace(imgPreProcessed)
+# Faceobj.RectAroundFace(faces, imgResized)
+# cv2.imshow("Faces found", imgResized)
+# cv2.waitKey(0)
 	# print img.shape, imgResized.shape
