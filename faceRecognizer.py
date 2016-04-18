@@ -43,8 +43,8 @@ while (len(faces) == 0 and count < 3):
 						cv2.getRotationMatrix2D((cols / 2, rows / 2), 90, 1) ,
 						(cols, rows)
 	)
-	cv2.imshow("Rotated Image", img)
-	cv2.waitKey(1000)
+	# cv2.imshow("Rotated Image", img)
+	# cv2.waitKey(1000)
 
 	imgPreProcessed, imgResized, faces = FaceDetection(img)
 

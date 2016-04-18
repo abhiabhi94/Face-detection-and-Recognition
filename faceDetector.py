@@ -6,7 +6,7 @@ div = 600
 # Create the haar cascade
 faceCascade = cv2.CascadeClassifier(cascPath)
 recognizer = cv2.createLBPHFaceRecognizer()
-
+# imgPath = "sample 3.JPG"
 class Face():
 
 	def preprocessing(self, img):
@@ -20,7 +20,7 @@ class Face():
 	def detectFace(self, gray):
 		faces = faceCascade.detectMultiScale(
 		    gray,
-		    scaleFactor = 1.1019,
+		    scaleFactor = 1.1,
 		    minNeighbors = 5,
 		    minSize = (30, 30),
 		    flags = cv2.cv.CV_HAAR_SCALE_IMAGE
@@ -37,4 +37,11 @@ class Face():
 
 
 ### Use this part only when you want to run this module independently ###
-# 
+# img = cv2.imread(imgPath)
+# Faceobj = Face()
+# imgPreProcessed, imgResized = Faceobj.preprocessing(img)
+# faces = Faceobj.detectFace(imgPreProcessed)
+# Faceobj.RectAroundFace(faces, imgResized)
+# cv2.imshow("Faces found", imgResized)
+# cv2.waitKey(0)
+# print img.shape, imgResized.shape
