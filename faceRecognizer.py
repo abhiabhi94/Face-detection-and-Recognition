@@ -2,7 +2,7 @@ import cv2, numpy as np
 from faceDetector import Face
 faceDB = np.load("friendlyFaces.npy")
 labels = np.load("friendlyFacesClassifier.npy")
-imgPath = "sample 5.JPG"
+imgPath = "sample 2.JPG"
 count = 0  # For stopping the program from running infinetly by limiting the rotation
 # CascadePath = "haarcascade_frontalface_default.xml"
 # faceCascade = cv2.CascadeClassifier(CascadePath)
