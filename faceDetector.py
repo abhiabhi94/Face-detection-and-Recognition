@@ -2,7 +2,7 @@ import cv2, sys
 
 # Get user supplied values
 cascPath = "haarcascade_frontalface_default.xml"
-div = 600
+div = 300
 # Create the haar cascade
 faceCascade = cv2.CascadeClassifier(cascPath)
 recognizer = cv2.createLBPHFaceRecognizer()
@@ -25,7 +25,7 @@ class Face():
 		    minSize = (30, 30),
 		    flags = cv2.cv.CV_HAAR_SCALE_IMAGE
 		)
-		print "Found {0} faces!".format(len(faces))
+		# print "Found {0} faces!".format(len(faces))
 		return faces
 
 	# Draw a rectangle around the faces
